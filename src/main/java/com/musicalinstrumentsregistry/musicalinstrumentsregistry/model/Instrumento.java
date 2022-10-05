@@ -21,4 +21,7 @@ public class Instrumento {
     //@OneToMany(mappedBy = "instrumento")
     //private List<Alumno> alumnos = new ArrayList<>();
 
+    /*@OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "instrumento_id", referencedColumnName = "id")
+    private List<Alumno> alumnos;*/
 }
