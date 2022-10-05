@@ -17,9 +17,9 @@ public class Alumno {
     private String apellido;
     private String curso;
 
-    private Long instrumento;
-    //@ManyToOne
-    //@JoinColumn(name = "instrumento_id")
-    //private Instrumento instrumento;
+    //private Long instrumento;
+    @ManyToOne( cascade = CascadeType.ALL)
+    @JoinColumn(name = "instrumento_id", referencedColumnName = "id")
+    private Instrumento instrumento;
 
 }

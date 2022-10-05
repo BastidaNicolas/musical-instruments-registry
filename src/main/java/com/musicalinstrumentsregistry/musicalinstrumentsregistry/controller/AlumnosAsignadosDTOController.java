@@ -23,7 +23,7 @@ public class AlumnosAsignadosDTOController {
     @GetMapping("/alumnos/traer/{nombre_instrumento}")
     public AlumnosAsignadosDTO getAlumnosAsignados(@PathVariable String nombre_instrumento){
         Instrumento instrumento = instrumentoRepository.findByNombre(nombre_instrumento);
-        List<Alumno> alumnos = alumnoRepository.findByInstrumento(instrumento.getId());
+        List<Alumno> alumnos = alumnoRepository.findByInstrumento(instrumento);
 
         AlumnosAsignadosDTO asignadosDTO = new AlumnosAsignadosDTO();
 
