@@ -25,13 +25,7 @@ public class AlumnosAsignadosDTOController {
         Instrumento instrumento = instrumentoRepository.findByNombre(nombre_instrumento);
         List<Alumno> alumnos = alumnoRepository.findByInstrumento(instrumento);
 
-        AlumnosAsignadosDTO asignadosDTO = new AlumnosAsignadosDTO();
-
-        asignadosDTO.setId_instrumento(instrumento.getId());
-        asignadosDTO.setNombre_instrumento(instrumento.getNombre());
-        asignadosDTO.setAlumnos(alumnos);
-
-        return asignadosDTO;
+        return AlumnosAsignadosDTO.from(alumnos, instrumento);
     }
 
 }
